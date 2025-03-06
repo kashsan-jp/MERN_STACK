@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/', getPosts);
 
 //Get user post route
-router.get('/use', auth, getUserPosts);
+router.get('/user', auth, getUserPosts);
 
 //Add new post route
 router.post('/', auth, addPost);
