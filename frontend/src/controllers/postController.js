@@ -9,7 +9,9 @@
     }
 
     return data
-
  }
+
+  /**************** Get user posts *****************/
+  
 
  export { getPosts }
