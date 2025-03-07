@@ -35,18 +35,18 @@ const Dashboard = () => {
 
     // Handle delete post
     const handleDelete = async(_id) => {
-        try {
-            const data = await deletePost(_id);
-            setSuccess(data.success)
-
-        } catch(error) {
-            setError(error.message)
-            // console.log(error.message);
+        if(confirm("Confirm delete?")) {
+            try {
+                const data = await deletePost(_id);
+                setSuccess(data.success)
+            } catch(error) {
+                setError(error.message)
+                // console.log(error.message);
+            }
+            const newPosts = user.posts.filter(post => post._id !== _id )
+            setUser({...user, posts: newPosts});
+            // console.log(id
         }
-
-        const newPosts = user.posts.filter(post => post._id !== _id )
-        setUser({...user, posts: newPosts});
-        // console.log(id)
     };
 
 
